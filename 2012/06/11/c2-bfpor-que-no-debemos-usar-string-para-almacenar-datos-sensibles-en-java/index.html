@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Últimamente he tenido que lidiar con datos comprometedores en mis desarrollos con los que se necesita tener especial cuidado, y la conclusión a la que he llegado es que no se debe usar String para dat">
+<meta name="keywords" content="datos sensibles,Java,seguridad,String">
+<meta property="og:type" content="article">
+<meta property="og:title" content="¿Por que no debemos usar String para almacenar datos sensibles en Java?">
+<meta property="og:url" content="https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Últimamente he tenido que lidiar con datos comprometedores en mis desarrollos con los que se necesita tener especial cuidado, y la conclusión a la que he llegado es que no se debe usar String para dat">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-02T11:42:45.362Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="¿Por que no debemos usar String para almacenar datos sensibles en Java?">
+<meta name="twitter:description" content="Últimamente he tenido que lidiar con datos comprometedores en mis desarrollos con los que se necesita tener especial cuidado, y la conclusión a la que he llegado es que no se debe usar String para dat">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>¿Por que no debemos usar String para almacenar datos sensibles en Java?</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2012/06/19/downgrade-de-ios-6-a-ios-5-1-1/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2011/10/08/como-instalar-el-emulador-de-android-en-windows/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&text=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&title=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&is_video=false&description=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=¿Por que no debemos usar String para almacenar datos sensibles en Java?&body=Check out this article: https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&title=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&title=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&title=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&title=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&name=¿Por que no debemos usar String para almacenar datos sensibles en Java?&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#¿Por-que-no-debemos-usar-String"><span class="toc-number">1.</span> <span class="toc-text">¿Por que no debemos usar String?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#¿Que-podemos-hacer-entonces"><span class="toc-number">2.</span> <span class="toc-text">¿Que podemos hacer entonces?</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        ¿Por que no debemos usar String para almacenar datos sensibles en Java?
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">Hexo</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2012-06-11T10:37:14.000Z" itemprop="datePublished">2012-06-11</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Desarrollo/">Desarrollo</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Java/">Java</a>, <a class="tag-link" href="/tags/String/">String</a>, <a class="tag-link" href="/tags/datos-sensibles/">datos sensibles</a>, <a class="tag-link" href="/tags/seguridad/">seguridad</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Últimamente he tenido que lidiar con datos comprometedores en mis desarrollos con los que se necesita tener especial cuidado, y la conclusión a la que he llegado es que <strong>no se debe usar String para datos sensibles.</strong></p>
+<h1 id="¿Por-que-no-debemos-usar-String"><a href="#¿Por-que-no-debemos-usar-String" class="headerlink" title="¿Por que no debemos usar String?"></a>¿Por que no debemos usar String?</h1><p>El tipo de datos String es <em>“inmutable”</em>, por lo tanto, no podemos cambiar el valor del objeto una vez que lo hemos creado. Esto hace que el valor de un String se almacene en memoria y su limpieza dependa del <a href="http://es.wikipedia.org/wiki/Recolector_de_basura" title="Garbage Collector" target="_blank" rel="noopener">garbage collector</a>. Por esta razón, si usamos un <a href="http://docs.oracle.com/javase/1.4.2/docs/api/java/lang/String.html" title="Especificación de String" target="_blank" rel="noopener">String</a> para almacenar un dato sensible, nunca podremos garantizar que su valor se haya borrado de memoria ya que no tenemos un control sobre la ejecución del <em>garbage collector</em>, y por tanto, nuestro dato será sensible a un volcado de memoria.</p>
+<h1 id="¿Que-podemos-hacer-entonces"><a href="#¿Que-podemos-hacer-entonces" class="headerlink" title="¿Que podemos hacer entonces?"></a>¿Que podemos hacer entonces?</h1><p>Java recomienda usar otros tipos de objetos para almacenar este tipo de valores, como por ejemplo el <strong>array de caracteres (char[])</strong>. El char[] es una cadena de caracteres y es “mutable” de manera que cuando terminamos de usarlo podemos asignar un ‘\0’ a cada uno de sus elementos y forzar el borrado del contenido. De esta manera no dependemos de que el garbage collector libere la memoria asignada al objeto.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#¿Por-que-no-debemos-usar-String"><span class="toc-number">1.</span> <span class="toc-text">¿Por que no debemos usar String?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#¿Que-podemos-hacer-entonces"><span class="toc-number">2.</span> <span class="toc-text">¿Que podemos hacer entonces?</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&text=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&title=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&is_video=false&description=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=¿Por que no debemos usar String para almacenar datos sensibles en Java?&body=Check out this article: https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&title=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&title=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&title=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&title=¿Por que no debemos usar String para almacenar datos sensibles en Java?"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://teenager.adgllorente.com/2012/06/11/c2-bfpor-que-no-debemos-usar-string-para-almacenar-datos-sensibles-en-java/&name=¿Por que no debemos usar String para almacenar datos sensibles en Java?&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Adrián Gómez
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

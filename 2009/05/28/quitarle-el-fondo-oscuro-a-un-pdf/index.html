@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Muchas veces queremos imprimir transparencias pero resulta que son PDF con el fondo oscuro, con lo que salen todas las hojas oscuras y es un incordio estudiar o leer en ellas, como yo también me he vi">
+<meta name="keywords" content="fondo,pdf,quitar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quitarle el fondo oscuro a un PDF">
+<meta property="og:url" content="https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Muchas veces queremos imprimir transparencias pero resulta que son PDF con el fondo oscuro, con lo que salen todas las hojas oscuras y es un incordio estudiar o leer en ellas, como yo también me he vi">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://kuv3.com/wp-content/uploads/2009/05/1-300x69.jpg">
+<meta property="og:image" content="http://kuv3.com/wp-content/uploads/2009/05/2-300x131.jpg">
+<meta property="og:updated_time" content="2019-02-02T11:42:45.362Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quitarle el fondo oscuro a un PDF">
+<meta name="twitter:description" content="Muchas veces queremos imprimir transparencias pero resulta que son PDF con el fondo oscuro, con lo que salen todas las hojas oscuras y es un incordio estudiar o leer en ellas, como yo también me he vi">
+<meta name="twitter:image" content="http://kuv3.com/wp-content/uploads/2009/05/1-300x69.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Quitarle el fondo oscuro a un PDF</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2009/06/01/metal-gear-solid-rising-5-para-xbox360/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2009/05/23/la-normativa-tan-extrana-de-ebay/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&text=Quitarle el fondo oscuro a un PDF"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&title=Quitarle el fondo oscuro a un PDF"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&is_video=false&description=Quitarle el fondo oscuro a un PDF"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Quitarle el fondo oscuro a un PDF&body=Check out this article: https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&title=Quitarle el fondo oscuro a un PDF"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&title=Quitarle el fondo oscuro a un PDF"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&title=Quitarle el fondo oscuro a un PDF"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&title=Quitarle el fondo oscuro a un PDF"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&name=Quitarle el fondo oscuro a un PDF&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Quitarle el fondo oscuro a un PDF
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">Hexo</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2009-05-28T21:38:08.000Z" itemprop="datePublished">2009-05-28</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Tutoriales/">Tutoriales</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/fondo/">fondo</a>, <a class="tag-link" href="/tags/pdf/">pdf</a>, <a class="tag-link" href="/tags/quitar/">quitar</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Muchas veces queremos imprimir transparencias pero resulta que son PDF con el fondo oscuro, con lo que salen todas las hojas oscuras y es un incordio estudiar o leer en ellas, como yo también me he visto en este caso, he tenido que investigar un poquito para ver como podía quitarle el dichoso fondo. Al final he encontrado una forma de hacerlo que cumple lo que promete aunque no es del todo automática. La cuento a continuación: <strong>1º Paso</strong> Cogeremos el PDF al que le queremos quitar el fondo, en nuestro caso serán unos <a href="http://eueez.unizar.es/files/GUION%20TEMA%206.pdf" target="_blank" rel="noopener">apuntes de la Economía española y mundial</a>, a continuación entraremos en la página <a href="http://www.pdftoword.com/" target="_blank" rel="noopener">PDFToWord</a> para convertir nuestro PDF a formato Word. <strong>2º Paso</strong> Una vez en esta página veremos unos cuadros que nos indican los pasos a realizar como los siguientes</p>
+<p><a href="http://kuv3.com/wp-content/uploads/2009/05/1.jpg" target="_blank" rel="noopener"><img src="http://kuv3.com/wp-content/uploads/2009/05/1-300x69.jpg" alt="1" title="1"></a></p>
+<p>En el <strong>primero</strong> de los pasos tendremos que <strong>seleccionar el archivo PDF</strong> que queremos convertir, en el <strong>segundo</strong> marcaremos <strong>DOC</strong> y en el <strong>tercero</strong> pondremos el <strong>email</strong> al que queremos que nos envíen el documento una vez convertido. Finalmente pulsaremos convert para que se inicie el proceso. <strong>3º Paso</strong> Recibiremos un correo electrónico que tendrá como archivo adjunto el documento DOC convertido, así que lo descargaremos y lo abriremos con el Microsoft Office. <strong>4º Paso</strong> Una vez en el Office, para quitarle el fondo a las imágenes sólo tendremos que seleccionar una de ellas pinchar arriba en <em>Herramientas de dibujo</em> y finalmente en <em>relleno de forma</em> y en el cuadro desplegable que tengamos seleccionaremos el color blanco. A continuación muestro un ejemplo con la primera diapositiva seleccionada.</p>
+<p><a href="http://kuv3.com/wp-content/uploads/2009/05/2.jpg" target="_blank" rel="noopener"><img src="http://kuv3.com/wp-content/uploads/2009/05/2-300x131.jpg" alt="2" title="2"></a></p>
+<p><strong>Finalmente</strong> Sólo tendremos que repetir el proceso con el resto de imágenes y ya habremos eliminado el fondo de un PDF. ¡Listos para imprimir!</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&text=Quitarle el fondo oscuro a un PDF"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&title=Quitarle el fondo oscuro a un PDF"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&is_video=false&description=Quitarle el fondo oscuro a un PDF"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Quitarle el fondo oscuro a un PDF&body=Check out this article: https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&title=Quitarle el fondo oscuro a un PDF"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&title=Quitarle el fondo oscuro a un PDF"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&title=Quitarle el fondo oscuro a un PDF"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&title=Quitarle el fondo oscuro a un PDF"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://teenager.adgllorente.com/2009/05/28/quitarle-el-fondo-oscuro-a-un-pdf/&name=Quitarle el fondo oscuro a un PDF&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Adrián Gómez
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

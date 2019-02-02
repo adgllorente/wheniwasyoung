@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Hace un tiempo se me propuso trabajar en un proyecto que requería recoger información de varios sitios web para luego juntarla en una misma página web. La primera de las ideas que miré fue la de busca">
+<meta name="keywords" content="Desarrollo,generador,rss,web,xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Genera XML a partir de un contenido con Dapper">
+<meta property="og:url" content="https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hace un tiempo se me propuso trabajar en un proyecto que requería recoger información de varios sitios web para luego juntarla en una misma página web. La primera de las ideas que miré fue la de busca">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-02T11:42:45.360Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Genera XML a partir de un contenido con Dapper">
+<meta name="twitter:description" content="Hace un tiempo se me propuso trabajar en un proyecto que requería recoger información de varios sitios web para luego juntarla en una misma página web. La primera de las ideas que miré fue la de busca">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Genera XML a partir de un contenido con Dapper</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2008/06/16/en-puertas-del-verano/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2008/04/14/el-cubo-de-rubik/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&text=Genera XML a partir de un contenido con Dapper"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&title=Genera XML a partir de un contenido con Dapper"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&is_video=false&description=Genera XML a partir de un contenido con Dapper"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Genera XML a partir de un contenido con Dapper&body=Check out this article: https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&title=Genera XML a partir de un contenido con Dapper"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&title=Genera XML a partir de un contenido con Dapper"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&title=Genera XML a partir de un contenido con Dapper"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&title=Genera XML a partir de un contenido con Dapper"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&name=Genera XML a partir de un contenido con Dapper&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Genera XML a partir de un contenido con Dapper
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">Hexo</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2008-06-13T14:10:29.000Z" itemprop="datePublished">2008-06-13</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Desarrollo/">Desarrollo</a> › <a class="category-link" href="/categories/Desarrollo/Webs-interesantes/">Webs interesantes</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Desarrollo/">Desarrollo</a>, <a class="tag-link" href="/tags/generador/">generador</a>, <a class="tag-link" href="/tags/rss/">rss</a>, <a class="tag-link" href="/tags/web/">web</a>, <a class="tag-link" href="/tags/xml/">xml</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Hace un tiempo se me propuso trabajar en un proyecto que requería recoger información de varios sitios web para luego juntarla en una misma página web.</p>
+<p>La primera de las ideas que miré fue la de buscar sitios que tuvieran los contenidos que necesitaba y si estos disponían de algún tipo de <a href="http://es.wikipedia.org/wiki/XML" title="XML en la Wikipedia" target="_blank" rel="noopener">XML</a> o derivados como RSS o JSON que me permitieran recoger lo que necesitaba y parsearlo de una manera cómoda. El problema llegó cuando estos sitios web no ofrecían estos servicios, así que como segundo recurso se me ocurrió parsear el código fuente de los sitios web para extraer los contenidos y así poder crearme un rss o xml que pudiera usar, pero después de usar el <a href="http://www.ignside.net/man/otros/fbshortcuts.php" title="Atajos de teclado en firefox" target="_blank" rel="noopener">“ctrl+u”</a> (amo el teclado) varias veces me dí cuenta de que aquel código estaba tan mal formado que parsearlo podía convertirse en un infierno.</p>
+<p>Así que pospuse el desarrollo del proyecto hasta tener una idea mejor para afrontarlo. El caso es que hace poco conocí la existencia de una web llamada <a href="http://www.dapper.net" title="The Data Mapper" target="_blank" rel="noopener">Dapper</a>, esta web permite generar archivos XML y sucedáneos de una forma cómoda y con solo varios clicks en la web que tiene los contenidos.</p>
+<p>Me lancé a probarlo y la verdad es que me pareció muy sencillo y una forma muy cómoda de conseguir aquello que necesitaba, por lo que el proyecto está otra vez entre mis manos y algún día igual lo cuelgo en la red.</p>
+<p>Con esta página también se puede “mangar” contenidos de una forma más sencilla, ¿qué se os ocurre hacer? ¿Creeis que es más util que parsear el código de otras formas? Echarle un ojo y me lo decís.</p>
+<p>PD: Vuelvo al tragín.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&text=Genera XML a partir de un contenido con Dapper"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&title=Genera XML a partir de un contenido con Dapper"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&is_video=false&description=Genera XML a partir de un contenido con Dapper"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Genera XML a partir de un contenido con Dapper&body=Check out this article: https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&title=Genera XML a partir de un contenido con Dapper"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&title=Genera XML a partir de un contenido con Dapper"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&title=Genera XML a partir de un contenido con Dapper"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&title=Genera XML a partir de un contenido con Dapper"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://teenager.adgllorente.com/2008/06/13/genera-rss-a-partir-de-un-contenido-con-dapper/&name=Genera XML a partir de un contenido con Dapper&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Adrián Gómez
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

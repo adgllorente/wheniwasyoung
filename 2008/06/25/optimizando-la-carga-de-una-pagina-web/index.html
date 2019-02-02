@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Desde hace un tiempo el blog iba bastante lento hasta el punto de que daba asco entrar a hacer ni tan si quiera una visitilla, así que he tenido que realizar una pequeña optimización del blog y me gus">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Optimizando la carga de una página web">
+<meta property="og:url" content="https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Desde hace un tiempo el blog iba bastante lento hasta el punto de que daba asco entrar a hacer ni tan si quiera una visitilla, así que he tenido que realizar una pequeña optimización del blog y me gus">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-02T11:42:45.360Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Optimizando la carga de una página web">
+<meta name="twitter:description" content="Desde hace un tiempo el blog iba bastante lento hasta el punto de que daba asco entrar a hacer ni tan si quiera una visitilla, así que he tenido que realizar una pequeña optimización del blog y me gus">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Optimizando la carga de una página web</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2008/07/04/firebug-un-theme-gratuito-para-wordpress/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2008/06/23/la-cuesta-arriba-de-pecina/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&text=Optimizando la carga de una página web"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&title=Optimizando la carga de una página web"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&is_video=false&description=Optimizando la carga de una página web"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Optimizando la carga de una página web&body=Check out this article: https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&title=Optimizando la carga de una página web"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&title=Optimizando la carga de una página web"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&title=Optimizando la carga de una página web"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&title=Optimizando la carga de una página web"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&name=Optimizando la carga de una página web&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Optimizando la carga de una página web
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">Hexo</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2008-06-24T23:43:23.000Z" itemprop="datePublished">2008-06-25</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Software/">Software</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Desde hace un tiempo el blog iba bastante lento hasta el punto de que daba asco entrar a hacer ni tan si quiera una visitilla, así que he tenido que realizar una pequeña optimización del blog y me gustaría contar mi experiencia. En primer lugar lo primero que hice fue ponerme en contacto con el servidor en el que está alojado el blog (<a href="http://dreamhost.com" target="_blank" rel="noopener">Dreamhost</a>) para pedirloes explicaciones sobre la carga a la que estaba sometida el servidor. Para comprobar la carga y algún dato más relevante podemos conectarnos por <a href="http://es.wikipedia.org/wiki/SSH" target="_blank" rel="noopener">SSH</a> a nuestro servidor, si lo soporta, y tecleando lo siguiente: <code>[hades]$ uptime 16:21:11 up 18 days, 20:37, 6 users, load average: 3.25, 2.81, 2.72</code> En este caso la carga del servidor “load average” es la normal para un servidor pero aquel día andaba por los 11 e incluso 30. En segundo lugar, aquí es donde comienza la parte práctica, comprobé los tiempos de carga del blog, para ello instalé un addon para <a href="http://www.mozilla-europe.org/es/firefox/" target="_blank" rel="noopener">Firefox</a> llamado <a href="https://addons.mozilla.org/es-ES/firefox/addon/1843" target="_blank" rel="noopener">Firebug</a>, si no sabes usarlo o quieres saber más sobre este addon puedes leerte un <a href="http://www.tufuncion.com/firebug" target="_blank" rel="noopener">pequeño manual</a>, aunque entre otras cosas este addon permite:</p>
+<ul>
+<li>Modificar el CSS al vuelo</li>
+<li>Comprobar el DOM</li>
+<li>Comprobar los tiempos de carga por fichero</li>
+</ul>
+<p>Los resultados y las soluciones las podéis encontrar después del salto. El Firebug me mostró que tenía varios archivos que estaba relentizando la carga del blog y que además no estaba usando, así que eché mano del código del blog y borré las lineas que incluían esos archivos. Por otro lado ví que otro retraso se producía por el plugin de Twitter, así que quité el existente y probé con <a href="http://wordpress.org/extend/plugins/simpletwitter/" target="_blank" rel="noopener">Simple Twitter</a> con un tiempo de actualización de las entradas de 5 minutos. Para finalizar y aunque esto no sea influyente para los tiempos de carga del servidor, hice una limpieza de plugins en el ftp, borrando todos aquellos que no usaba y actualicé mediante el panel de administración aquellos que tenía en uso. Gracias a estos cambios la velocidad de carga del blog se ha visto aumentada en casi un 200% aunque no dispongo de los datos exactos, pero vosotros mismos lo podeis comprobar, aunque tengo que decir que había ciertas cagadas que relentizaban mucho, no es normal conseguir una mejora tan alta si estás acostumbrado a hacer las cosas bien.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&text=Optimizando la carga de una página web"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&title=Optimizando la carga de una página web"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&is_video=false&description=Optimizando la carga de una página web"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Optimizando la carga de una página web&body=Check out this article: https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&title=Optimizando la carga de una página web"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&title=Optimizando la carga de una página web"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&title=Optimizando la carga de una página web"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&title=Optimizando la carga de una página web"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://teenager.adgllorente.com/2008/06/25/optimizando-la-carga-de-una-pagina-web/&name=Optimizando la carga de una página web&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Adrián Gómez
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
